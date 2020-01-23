@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" class="gr__getbootstrap_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="./img/favicon.ico">
+
+    <title>Mona</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/pricing.css" rel="stylesheet">
+  </head>
+
+  <body data-gr-c-s-loaded="true">
+
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+      <img class="my-0 mr-md-auto font-weight-normal" src="./img/logo.png" width="160px">
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="./index.html">Home</a>
+        <a class="p-2 text-dark" href="./celltype.html">Cell Type</a>
+        <a class="p-2 text-dark" href="./igv.html">Tracks</a>
+        <a class="p-2 text-dark" href="./datasets.html">Datasets</a>
+        <a class="p-2 text-dark" href="./about.html">About</a>
+        <a class="p-2 text-dark" href="./contact.html">Contact</a>
+      </nav>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-2">
+          <nav id="navbar-about" class="navbar navbar-light bg-light flex-column">
+            <a class="navbar-brand" href="#"><b>About</b></a>
+            <nav class="nav nav-pills flex-column">
+              <a class="nav-link active" href="#item-1">Introduction</a>
+              <a class="nav-link" href="#item-2">Database</a>
+              <a class="nav-link" href="#item-3">Items</a>
+              <nav class="nav nav-pills flex-column">
+                <a class="nav-link ml-3 my-1" href="#item-3-1">OBS</a>
+                <a class="nav-link ml-3 my-1" href="#item-3-2"><I>p</I>-value</a>
+                <a class="nav-link ml-3 my-1" href="#item-3-3">PBS</a>
+                <a class="nav-link ml-3 my-1" href="#item-3-4"><I>p</I>-value (PBS)</a>
+                <a class="nav-link ml-3 my-1" href="#item-3-5">Alt</a>
+                <a class="nav-link ml-3 my-1" href="#item-3-6">Ref</a>
+              </nav>
+            </nav>
+          </nav>
+        </div>
+        <div class="col-10">
+          <div class="card">
+          <div class="container">
+            <div class="relative" data-spy="scroll" data-target="#navbar-about" data-offset="0">
+              <h4 id="item-1">Introduction</h4>
+              <p>This database characterizes the allelic binding of 95,887 common human single nucleotide polymorphisms (SNPs, MAF&gt;1% in White and Asian populations) to 270 distinct transcription factors (TFs). The SNPs were chosen from neighboring regions (&lt;=500 kb) of 83 risk loci of type-2- diabetes (T2D) that were identified in several genome wide association studies (GWAS). The data were generated using Sequence-based SELEX-Seq (3S). For detail about the SNP selection and experimental or computational pipeline, please refer to the Ren lab research article, “Allelic Binding of Human Transcription Factors to Genetic Variants that Are Linked to Type-2-Diebetes”. </br></br>
+              </p>
+<h4 id="item-2">Database</h4>
+              <p>We are now processing more SNPs that are related to T2D and type-1-diabetes T1D). The database will be updated once new data are available for release.</br></br>
+              The work has been supported by the National Institute of Health (NIH), Ludwig Institute of Cancer Research and the Swedish Research Council. We declare no conflict of interest.</p>
+              <h4 id="item-3">Items</h4>
+              <p>We described the measurements as below:</p>
+              <h5 id="item-3-1">OBS</h5>
+              <p>Oligo Binding Score, defined by Area Under Curve of oligo enrichment per TF. The reads from the 40-bp oligo (regardless of allele) were counted for the input pool and for the 6 SELEX cycles. Odds (oligo/others) ratio between each cycle and input was computed and plotted against SELEX cycle serial number (x-axis: SELEX cycle; y-axis: LOG10 odds ratio). A curve was drawn between the juxtaposed dots. Area Under Curve is used as a score to assess TF binding to the 40-bp sequence.</p>
+              <h5 id="item-3-2"><I>p</I>-value (OBS)</h5>
+              <p>25,000 Monte-Carlo randomization was carried out to get a p value of the OBS. A cut off of 0.05 is used to define ‘Binding’ of the TF to the genomic fragment.</p>
+              <h5 id="item-3-3">PBS</h5>
+              <p>2Preferential Binding Score, defined by Area Under Curve of differential allelic enrichment per TF. Curves for both alleles of OBS (see above) were drawn in the same plot and area between the two curves was computed to define the differential binding of two alleles to the TF. The reference allele is always subtracted by the alternative allele so that the negative value means that the TF prefers alternative allele.</p>
+              <h5 id="item-3-4"><I>p</I>-value (PBS)</h5>
+              <p>25,000 Monte-Carlo randomization was carried out to get a p value of the PBS. A cut off of 0.01 is used to define ‘Differential Binding’ of the TF to the two alleles.</p>
+              <h5 id="item-3-5">Alt</h5>
+              <p>Nucleotide sequence of the alternative allele of the SNP (hg19).</p>
+              <h5 id="item-3-6">Ref</h5>
+              <p>Nucleotide sequence of the reference allele of the SNP (hg19).</p>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+
+      <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+          <div class="col-6 col">
+            <p><a href="http://renlab.sdsc.edu/renlab_website/">© 2018 RENlab @ UCSD  </a></p>
+          </div>
+          <div class="col col-sm">
+            <h5>Resources</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="https://getbootstrap.com/docs/4.0/examples/pricing/#">Source code</a></li>
+              <li><a class="text-muted" href="https://getbootstrap.com/docs/4.0/examples/pricing/#">Publication</a></li>
+            </ul>
+          </div>
+          <div class="col col-sm">
+            <h5>About</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="https://getbootstrap.com/docs/4.0/examples/pricing/#">Contact</a></li>
+              <li><a class="text-muted" href="https://getbootstrap.com/docs/4.0/examples/pricing/#">Privacy</a></li>
+              <li><a class="text-muted" href="https://getbootstrap.com/docs/4.0/examples/pricing/#">Terms</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./js/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="./js/jquery-slim.min.js"><\/script>')</script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/holder.min.js"></script>
+    <script src="./ext/jquery-scrollto/vendor/jquery.js"></script>
+    <script src="./ext/jquery-scrollto/lib/jquery-scrollto.js"></script>
+    <script>
+      Holder.addTheme('thumb', {
+        bg: '#55595c',
+        fg: '#eceeef',
+        text: 'Thumbnail'
+      });
+    </script>
+
+    <script>
+    $("#navbar-about ul li a[href^='#']").on('click', function(e) {
+    
+       // prevent default anchor click behavior
+       e.preventDefault();
+    
+       // store hash
+       var hash = this.hash;
+    
+       // animate
+       $('div').animate({
+           scrollTop: $(hash).offset().top
+         }, 300, function(){
+    
+           // when done, add hash to url
+           // (default click behaviour)
+           window.location.hash = hash;
+         });
+    
+    });
+    </script>  
+
+<span style="border-radius: 3px; text-indent: 20px; width: auto; padding: 0px 4px 0px 0px; text-align: center; font-style: normal; font-variant: normal; font-weight: bold; font-stretch: normal; font-size: 11px; line-height: 20px; font-family: &quot;Helvetica Neue&quot;, Helvetica, sans-serif; color: rgb(255, 255, 255); background: url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMzBweCIgd2lkdGg9IjMwcHgiIHZpZXdCb3g9Ii0xIC0xIDMxIDMxIj48Zz48cGF0aCBkPSJNMjkuNDQ5LDE0LjY2MiBDMjkuNDQ5LDIyLjcyMiAyMi44NjgsMjkuMjU2IDE0Ljc1LDI5LjI1NiBDNi42MzIsMjkuMjU2IDAuMDUxLDIyLjcyMiAwLjA1MSwxNC42NjIgQzAuMDUxLDYuNjAxIDYuNjMyLDAuMDY3IDE0Ljc1LDAuMDY3IEMyMi44NjgsMC4wNjcgMjkuNDQ5LDYuNjAxIDI5LjQ0OSwxNC42NjIiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxIj48L3BhdGg+PHBhdGggZD0iTTE0LjczMywxLjY4NiBDNy41MTYsMS42ODYgMS42NjUsNy40OTUgMS42NjUsMTQuNjYyIEMxLjY2NSwyMC4xNTkgNS4xMDksMjQuODU0IDkuOTcsMjYuNzQ0IEM5Ljg1NiwyNS43MTggOS43NTMsMjQuMTQzIDEwLjAxNiwyMy4wMjIgQzEwLjI1MywyMi4wMSAxMS41NDgsMTYuNTcyIDExLjU0OCwxNi41NzIgQzExLjU0OCwxNi41NzIgMTEuMTU3LDE1Ljc5NSAxMS4xNTcsMTQuNjQ2IEMxMS4xNTcsMTIuODQyIDEyLjIxMSwxMS40OTUgMTMuNTIyLDExLjQ5NSBDMTQuNjM3LDExLjQ5NSAxNS4xNzUsMTIuMzI2IDE1LjE3NSwxMy4zMjMgQzE1LjE3NSwxNC40MzYgMTQuNDYyLDE2LjEgMTQuMDkzLDE3LjY0MyBDMTMuNzg1LDE4LjkzNSAxNC43NDUsMTkuOTg4IDE2LjAyOCwxOS45ODggQzE4LjM1MSwxOS45ODggMjAuMTM2LDE3LjU1NiAyMC4xMzYsMTQuMDQ2IEMyMC4xMzYsMTAuOTM5IDE3Ljg4OCw4Ljc2NyAxNC42NzgsOC43NjcgQzEwLjk1OSw4Ljc2NyA4Ljc3NywxMS41MzYgOC43NzcsMTQuMzk4IEM4Ljc3NywxNS41MTMgOS4yMSwxNi43MDkgOS43NDksMTcuMzU5IEM5Ljg1NiwxNy40ODggOS44NzIsMTcuNiA5Ljg0LDE3LjczMSBDOS43NDEsMTguMTQxIDkuNTIsMTkuMDIzIDkuNDc3LDE5LjIwMyBDOS40MiwxOS40NCA5LjI4OCwxOS40OTEgOS4wNCwxOS4zNzYgQzcuNDA4LDE4LjYyMiA2LjM4NywxNi4yNTIgNi4zODcsMTQuMzQ5IEM2LjM4NywxMC4yNTYgOS4zODMsNi40OTcgMTUuMDIyLDYuNDk3IEMxOS41NTUsNi40OTcgMjMuMDc4LDkuNzA1IDIzLjA3OCwxMy45OTEgQzIzLjA3OCwxOC40NjMgMjAuMjM5LDIyLjA2MiAxNi4yOTcsMjIuMDYyIEMxNC45NzMsMjIuMDYyIDEzLjcyOCwyMS4zNzkgMTMuMzAyLDIwLjU3MiBDMTMuMzAyLDIwLjU3MiAxMi42NDcsMjMuMDUgMTIuNDg4LDIzLjY1NyBDMTIuMTkzLDI0Ljc4NCAxMS4zOTYsMjYuMTk2IDEwLjg2MywyNy4wNTggQzEyLjA4NiwyNy40MzQgMTMuMzg2LDI3LjYzNyAxNC43MzMsMjcuNjM3IEMyMS45NSwyNy42MzcgMjcuODAxLDIxLjgyOCAyNy44MDEsMTQuNjYyIEMyNy44MDEsNy40OTUgMjEuOTUsMS42ODYgMTQuNzMzLDEuNjg2IiBmaWxsPSIjYmQwODFjIj48L3BhdGg+PC9nPjwvc3ZnPg==&quot;) 3px 50% / 14px 14px no-repeat rgb(189, 8, 28); position: absolute; opacity: 1; z-index: 8675309; display: none; cursor: pointer; border: none; -webkit-font-smoothing: antialiased;">Save</span><span style="width: 24px; height: 24px; background: url(&quot;data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pjxzdmcgd2lkdGg9IjI0cHgiIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxkZWZzPjxtYXNrIGlkPSJtIj48cmVjdCBmaWxsPSIjZmZmIiB4PSIwIiB5PSIwIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHJ4PSI2IiByeT0iNiIvPjxyZWN0IGZpbGw9IiMwMDAiIHg9IjUiIHk9IjUiIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgcng9IjEiIHJ5PSIxIi8+PHJlY3QgZmlsbD0iIzAwMCIgeD0iMTAiIHk9IjAiIHdpZHRoPSI0IiBoZWlnaHQ9IjI0Ii8+PHJlY3QgZmlsbD0iIzAwMCIgeD0iMCIgeT0iMTAiIHdpZHRoPSIyNCIgaGVpZ2h0PSI0Ii8+PC9tYXNrPjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNmZmYiIG1hc2s9InVybCgjbSkiLz48L3N2Zz4=&quot;) 50% 50% / 14px 14px no-repeat rgba(0, 0, 0, 0.4); position: absolute; opacity: 1; z-index: 8675309; display: none; cursor: pointer; border: none; border-radius: 12px;"></span></body></html>
