@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+<html lang="en" class="gr__getbootstrap_com">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<head>
+
+
+
+
+
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+
+
+
+
+  <meta name="description" content="">
+
+
+
+
+
+
+
+  <meta name="author" content="">
+
+
+
+
+
+
+
+  <link rel="icon" href="../img/favicon.ico">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <title>Mona</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Bootstrap core CSS -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Custom styles for this template -->
+
+
+
+
+
+
+
+  <link href="../css/pricing.css" rel="stylesheet">
+
+
+
+
+
+
+
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+  <style>
+
+
+
+
+
+
+
+    #L3_title {
+
+
+
+
+
+
+
+      margin-left: 10px;
+
+
+
+
+
+
+
+      margin-top: 30px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </style>
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body data-gr-c-s-loaded="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+
+
+
+
+
+
+
+    <img class="my-0 mr-md-auto font-weight-normal" src="../img/logo.png" width="160px">
+
+
+
+
+
+
+
+    <nav class="my-2 my-md-0 mr-md-3">
+
+
+
+
+
+
+
+      <a class="p-2 text-dark" href="../index.html">Home</a>
+
+
+
+
+
+
+
+      <a class="p-2 text-dark" href="../celltype.html">Cell Type</a>
+
+
+
+
+
+
+
+      <a class="p-2 text-dark" href="../igv.html">Tracks</a>
+
+
+
+
+
+
+
+      <a class="p-2 text-dark" href="../datasets.html">Datasets</a>
+
+
+
+
+
+
+
+      <a class="p-2 text-dark" href="../about.html">About</a>
+
+
+
+
+
+
+
+      <a class="p-2 text-dark" href="../contact.html">Contact</a>
+
+
+
+
+
+
+
+    </nav>
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div margin="auto" class="col-10">
+
+
+
+
+
+
+
+    <div class="col-1"></div>
+
+
+
+
+
+
+
+    <div class="row">
+
+
+
+
+
+
+
+      <div class="col">
+
+
+
+
+
+
+
+        <h2 id="L3_title">NonN.Asc.Myoc</h2>
+        <div class="card">
+
+
+
+
+
+
+
+          <div class="card-body">
+
+
+
+
+
+
+
+            <h4 class="card-title">Properties</h4>
+
+
+
+
+
+
+
+            <table id="L3_table" class="table table-sm">
+
+
+
+
+
+
+
+              <tr>
+
+
+
+
+
+
+
+                <th>Symbol</th>
+
+
+
+
+
+
+
+                <td id="Symbol">data</td>
+
+
+
+
+
+
+
+              </tr>
+
+
+
+
+
+
+
+              <tr>
+
+
+
+
+
+
+
+                <th>Cell Count</th>
+
+
+
+
+
+
+
+                <td id="Cell_Count">data</td>
+
+
+
+
+
+
+
+              </tr>
+
+
+
+
+
+
+
+              <tr>
+
+
+
+
+
+
+
+                <th>Peaks</th>
+
+
+
+
+
+
+
+                <td id="Peaks">data</td>
+
+
+
+
+
+
+
+              </tr>
+
+
+
+
+
+
+
+            </table>
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <svg width="600" height="500"></svg>
+
+
+
+
+
+
+
+    <script>
+
+
+
+
+
+
+
+        var svg = d3.select("svg"),
+
+
+
+
+
+
+
+            margin = 200,
+
+
+
+
+
+
+
+            width = svg.attr("width") - margin,
+
+
+
+
+
+
+
+            height = svg.attr("height") - margin;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        var xScale = d3.scaleBand().range ([0, width]).padding(0.4),
+
+
+
+
+
+
+
+            yScale = d3.scaleLinear().range ([height, 0]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        var g = svg.append("g")
+
+
+
+
+
+
+
+                  .attr("transform", "translate(" + 100 + "," + 100 + ")");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script> -->
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <footer class="pt-4 my-md-5 pt-md-5 border-top">
+
+
+
+
+
+
+
+    <div class="row">
+
+
+
+
+
+
+
+      <div class="col-6 col">
+
+
+
+
+
+
+
+        <p><a href="http://renlab.sdsc.edu/renlab_website/">© 2018 RENlab @ UCSD </a></p>
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+      <div class="col col-sm">
+
+
+
+
+
+
+
+        <h5>Resources</h5>
+
+
+
+
+
+
+
+        <ul class="list-unstyled text-small">
+
+
+
+
+
+
+
+          <li><a class="text-muted" href="https://getbootstrap.com/docs/4.0/examples/pricing/#">Source code</a></li>
+
+
+
+
+
+
+
+          <li><a class="text-muted" href="https://getbootstrap.com/docs/4.0/examples/pricing/#">Publication</a></li>
+
+
+
+
+
+
+
+        </ul>
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+      <div class="col col-sm">
+
+
+
+
+
+
+
+        <h5>About</h5>
+
+
+
+
+
+
+
+        <ul class="list-unstyled text-small">
+
+
+
+
+
+
+
+          <li><a class="text-muted" href="https://getbootstrap.com/docs/4.0/examples/pricing/#">Contact</a></li>
+
+
+
+
+
+
+
+          <li><a class="text-muted" href="https://getbootstrap.com/docs/4.0/examples/pricing/#">Privacy</a></li>
+
+
+
+
+
+
+
+          <li><a class="text-muted" href="https://getbootstrap.com/docs/4.0/examples/pricing/#">Terms</a></li>
+
+
+
+
+
+
+
+        </ul>
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+  </footer>
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+
+
+
+
+  <script src="../js/cell_template.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <span
+
+
+
+
+
+
+
+    style="border-radius: 3px; text-indent: 20px; width: auto; padding: 0px 4px 0px 0px; text-align: center; font-style: normal; font-variant: normal; font-weight: bold; font-stretch: normal; font-size: 11px; line-height: 20px; font-family: &quot;Helvetica Neue&quot;, Helvetica, sans-serif; color: rgb(255, 255, 255); background: url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMzBweCIgd2lkdGg9IjMwcHgiIHZpZXdCb3g9Ii0xIC0xIDMxIDMxIj48Zz48cGF0aCBkPSJNMjkuNDQ5LDE0LjY2MiBDMjkuNDQ5LDIyLjcyMiAyMi44NjgsMjkuMjU2IDE0Ljc1LDI5LjI1NiBDNi42MzIsMjkuMjU2IDAuMDUxLDIyLjcyMiAwLjA1MSwxNC42NjIgQzAuMDUxLDYuNjAxIDYuNjMyLDAuMDY3IDE0Ljc1LDAuMDY3IEMyMi44NjgsMC4wNjcgMjkuNDQ5LDYuNjAxIDI5LjQ0OSwxNC42NjIiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxIj48L3BhdGg+PHBhdGggZD0iTTE0LjczMywxLjY4NiBDNy41MTYsMS42ODYgMS42NjUsNy40OTUgMS42NjUsMTQuNjYyIEMxLjY2NSwyMC4xNTkgNS4xMDksMjQuODU0IDkuOTcsMjYuNzQ0IEM5Ljg1NiwyNS43MTggOS43NTMsMjQuMTQzIDEwLjAxNiwyMy4wMjIgQzEwLjI1MywyMi4wMSAxMS41NDgsMTYuNTcyIDExLjU0OCwxNi41NzIgQzExLjU0OCwxNi41NzIgMTEuMTU3LDE1Ljc5NSAxMS4xNTcsMTQuNjQ2IEMxMS4xNTcsMTIuODQyIDEyLjIxMSwxMS40OTUgMTMuNTIyLDExLjQ5NSBDMTQuNjM3LDExLjQ5NSAxNS4xNzUsMTIuMzI2IDE1LjE3NSwxMy4zMjMgQzE1LjE3NSwxNC40MzYgMTQuNDYyLDE2LjEgMTQuMDkzLDE3LjY0MyBDMTMuNzg1LDE4LjkzNSAxNC43NDUsMTkuOTg4IDE2LjAyOCwxOS45ODggQzE4LjM1MSwxOS45ODggMjAuMTM2LDE3LjU1NiAyMC4xMzYsMTQuMDQ2IEMyMC4xMzYsMTAuOTM5IDE3Ljg4OCw4Ljc2NyAxNC42NzgsOC43NjcgQzEwLjk1OSw4Ljc2NyA4Ljc3NywxMS41MzYgOC43NzcsMTQuMzk4IEM4Ljc3NywxNS41MTMgOS4yMSwxNi43MDkgOS43NDksMTcuMzU5IEM5Ljg1NiwxNy40ODggOS44NzIsMTcuNiA5Ljg0LDE3LjczMSBDOS43NDEsMTguMTQxIDkuNTIsMTkuMDIzIDkuNDc3LDE5LjIwMyBDOS40MiwxOS40NCA5LjI4OCwxOS40OTEgOS4wNCwxOS4zNzYgQzcuNDA4LDE4LjYyMiA2LjM4NywxNi4yNTIgNi4zODcsMTQuMzQ5IEM2LjM4NywxMC4yNTYgOS4zODMsNi40OTcgMTUuMDIyLDYuNDk3IEMxOS41NTUsNi40OTcgMjMuMDc4LDkuNzA1IDIzLjA3OCwxMy45OTEgQzIzLjA3OCwxOC40NjMgMjAuMjM5LDIyLjA2MiAxNi4yOTcsMjIuMDYyIEMxNC45NzMsMjIuMDYyIDEzLjcyOCwyMS4zNzkgMTMuMzAyLDIwLjU3MiBDMTMuMzAyLDIwLjU3MiAxMi42NDcsMjMuMDUgMTIuNDg4LDIzLjY1NyBDMTIuMTkzLDI0Ljc4NCAxMS4zOTYsMjYuMTk2IDEwLjg2MywyNy4wNTggQzEyLjA4NiwyNy40MzQgMTMuMzg2LDI3LjYzNyAxNC43MzMsMjcuNjM3IEMyMS45NSwyNy42MzcgMjcuODAxLDIxLjgyOCAyNy44MDEsMTQuNjYyIEMyNy44MDEsNy40OTUgMjEuOTUsMS42ODYgMTQuNzMzLDEuNjg2IiBmaWxsPSIjYmQwODFjIj48L3BhdGg+PC9nPjwvc3ZnPg==&quot;) 3px 50% / 14px 14px no-repeat rgb(189, 8, 28); position: absolute; opacity: 1; z-index: 8675309; display: none; cursor: pointer; border: none; -webkit-font-smoothing: antialiased;">Save</span><span
+
+
+
+
+
+
+
+    style="width: 24px; height: 24px; background: url(&quot;data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pjxzdmcgd2lkdGg9IjI0cHgiIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxkZWZzPjxtYXNrIGlkPSJtIj48cmVjdCBmaWxsPSIjZmZmIiB4PSIwIiB5PSIwIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHJ4PSI2IiByeT0iNiIvPjxyZWN0IGZpbGw9IiMwMDAiIHg9IjUiIHk9IjUiIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgcng9IjEiIHJ5PSIxIi8+PHJlY3QgZmlsbD0iIzAwMCIgeD0iMTAiIHk9IjAiIHdpZHRoPSI0IiBoZWlnaHQ9IjI0Ii8+PHJlY3QgZmlsbD0iIzAwMCIgeD0iMCIgeT0iMTAiIHdpZHRoPSIyNCIgaGVpZ2h0PSI0Ii8+PC9tYXNrPjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNmZmYiIG1hc2s9InVybCgjbSkiLz48L3N2Zz4=&quot;) 50% 50% / 14px 14px no-repeat rgba(0, 0, 0, 0.4); position: absolute; opacity: 1; z-index: 8675309; display: none; cursor: pointer; border: none; border-radius: 12px;"></span>
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
+
+
+
