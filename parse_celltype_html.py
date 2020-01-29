@@ -12,17 +12,16 @@ for line in content:
     if("TEMPLATE" in line):
         target_line_index=content.index(line)
         content.pop(target_line_index)
-    if("<head>" in line):
-        head_index=content.index(line)
-content.insert(head_index+1,"<!-- Include Plotly.js --><script src=\"https://cdn.plot.ly/plotly-latest.min.js\"></script>")
+
 for name in names:
     cur_file_name="./celltype_html/"+name+".html"
     #Still not right
     cur_title="        <h2 id=\"L3_title\">"+ name+"</h2>"
-    if ("L3_title" in content[target_line_index]):
-        content.pop(target_line_index)
-    content.insert(target_line_index+1, cur_title)
+    content.insert(target_line_index, cur_title)
+    #print(cur_title)
     with open(cur_file_name, 'w') as f:
         for item in content:
             f.write("%s"%item)
+    print(content[target_line_index])
+    content.pop(target_line_index)
 
