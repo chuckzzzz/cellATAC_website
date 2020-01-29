@@ -1,4 +1,4 @@
-with open("template.html") as f:
+with open("./celltype_html/template.html") as f:
     content = f.readlines()
 with open("./data/cells.json") as f:
     names = f.readlines()[0]
