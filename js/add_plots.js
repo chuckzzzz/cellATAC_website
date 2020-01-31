@@ -13,13 +13,17 @@ corr_data={
   var layout_QC = {
     title: 'Quality Control',
     xaxis: {
-      title: 'Depth',
+      title: 'TSSE',
       showgrid: false,
-      zeroline: false
+      showline: true,
+      zeroline: true,
+      range:[0,55]
     },
     yaxis: {
-      title: 'Tsse',
-      showline: false
+      title: 'LogUMI',
+      showline: true,
+      zeroline: true,
+      range:[0,5.5]
     }
   };
   var layout_COOR = {
@@ -34,6 +38,7 @@ corr_data={
       showline: false
     }
   };
+
 var QC_data = [ QC_data ];  
 var corr=[corr_data] 
 // Plotly.newPlot('QC', QC_data, layout_QC);
@@ -58,15 +63,31 @@ $.ajax({
         tsse.push(item.split('\t')[0]);
         logUMI.push(item.split('\t')[1]);
       });
-      var QC_data=[{x:tsse, y:logUMI,
+      var x_max=Math.max.apply(Math, tsse);
+      var y_max=Math.max.apply(Math, logUMI);
+      layout_QC['xaxis']['range']=[0, x_max+2];
+      layout_QC['yaxis']['range']=[0, y_max+0.2];
+      var QC_data={x:tsse, y:logUMI,
         mode: 'markers',
         type: 'scatter',
         marker: {
             color: 'rgb(142, 124, 195)',
-            size: 6
+            size: 4,
+            opacity: 0.5
         },
-      }];
-      Plotly.newPlot('QC', QC_data, layout_QC);
+      };
+      var QC_density={
+        x: tsse,
+        y: logUMI,
+        name: 'density',
+        ncontours: 20,
+        colorscale: 'Hot',
+        reversescale: true,
+        showscale: false,
+        type: 'histogram2dcontour'
+      };
+      QC=[QC_data,QC_density]
+      Plotly.newPlot('QC', QC, layout_QC);
       },
       error: function(){
           alert(data_file + "Not Found");
