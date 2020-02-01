@@ -1,4 +1,3 @@
-var QC_data = {        x: [1, 2, 3, 4, 5, 6, 7, 8],        y: [1, 4, 9, 16, 25, 36, 49, 64]};
   
 corr_data={
     x:[1,2,3,4,5],
@@ -13,30 +12,51 @@ corr_data={
   var layout_QC = {
     title: 'Quality Control',
     xaxis: {
-      title: 'TSSE',
+      title: 'logUMI',
       showgrid: false,
       showline: true,
       zeroline: true,
       range:[0,55]
     },
     yaxis: {
-      title: 'LogUMI',
+      title: 'tsse',
       showline: true,
       zeroline: true,
       range:[0,5.5]
+    },
+    xaxis2: {
+      domain: [0.85, 1],
+      showgrid: false,
+      zeroline: false
+    },
+    yaxis2: {
+      domain: [0.85, 1],
+      showgrid: false,
+      zeroline: false
     }
   };
   var layout_COOR = {
     title: 'Correlation',
+    showlegend: false,
+    autosize: false,
+    width: 600,
+    height: 550,
+    margin: {t: 50},
+    hovermode: 'closest',
+    bargap: 0,
     xaxis: {
       title: 'X Label',
       showgrid: false,
-      zeroline: false
+      zeroline: false,
+      domain: [0, 0.85],
     },
     yaxis: {
       title: 'Y Label',
-      showline: false
-    }
+      showgrid: false,
+      zeroline: false,
+      domain: [0, 0.85],
+
+    },
   };
 
 var QC_data = [ QC_data ];  
@@ -63,30 +83,57 @@ $.ajax({
         tsse.push(item.split('\t')[0]);
         logUMI.push(item.split('\t')[1]);
       });
-      var x_max=Math.max.apply(Math, tsse);
-      var y_max=Math.max.apply(Math, logUMI);
+      var x_max=Math.max.apply(Math, logUMI);
+      var y_max=Math.max.apply(Math, tsse);
       layout_QC['xaxis']['range']=[0, x_max+2];
       layout_QC['yaxis']['range']=[0, y_max+0.2];
-      var QC_data={x:tsse, y:logUMI,
+      // layout_QC['xaxis2']['range']=[0, x_max+2];
+      // layout_QC['yaxis2']['range']=[0, y_max+0.2];
+      var QC_data={
+        x:logUMI, 
+        y:tsse,
+        name: 'QC_data',
         mode: 'markers',
         type: 'scatter',
         marker: {
-            color: 'rgb(142, 124, 195)',
-            size: 4,
-            opacity: 0.5
+          color: 'rgb(102,0,0)',
+          size: 2,
+          opacity: 0.5
         },
       };
       var QC_density={
-        x: tsse,
-        y: logUMI,
+        x: logUMI,
+        y: tsse,
         name: 'density',
         ncontours: 20,
         colorscale: 'Hot',
         reversescale: true,
         showscale: false,
-        type: 'histogram2dcontour'
+        type: 'histogram2dcontour',
       };
-      QC=[QC_data,QC_density]
+      var x_density_histo={
+        x: logUMI,
+        name: 'logUMI density',
+        marker: {color: 'rgb(102,0,0)'},
+        yaxis: 'y2',
+        type: 'histogram',
+        domain: {
+          x: [0.85, 1],
+          y: [0.85, 1]
+        },
+      }
+      var y_density_histo={
+        y: tsse,
+        name: 'tsse density',
+        marker: {color: 'rgb(102,0,0)'},
+        xaxis: 'x2',
+        type: 'histogram',
+        domain: {
+          x: [0.85, 1],
+          y: [0.85, 1]
+        },
+      } 
+      QC=[QC_data,QC_density, x_density_histo,y_density_histo]
       Plotly.newPlot('QC', QC, layout_QC);
       },
       error: function(){
